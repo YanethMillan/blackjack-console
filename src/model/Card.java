@@ -1,19 +1,31 @@
 package model;
 
 public class Card {
-   private String name;
-    private int value;
+   private String rank; // "A", "2", "10", "K"
+    private String value; // "♠", "♥", "♦", "♣"
 
-    public Card(String name, int value) {
-        this.name = name;
+    public Card(String name, String value) {
+        this.rank = name;
         this.value = value;
     }
 
-    public String getName() {
-        return name;
+    public String getRank() {
+        return rank;
     }
 
-    public int getValue() {
+    public String getValue() {
         return value;
+    }
+
+    //Este metodo es solo para darle formato a la impresion
+    public String getFormattedRank() {
+        if (rank.equals("10"))
+        {
+            return rank;
+        }
+        else
+        {
+            return rank + " ";
+        }
     }
 }

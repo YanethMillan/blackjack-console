@@ -5,13 +5,22 @@ import java.util.Collections;
 public class Deck {
     ArrayList<Card> cards;
 
-    public Deck() {
+    //Nuestras opciones de cartas, son final porque no van a cambiar, así prevenimos que otros programadores los modifiquen por accidente
+    final String[] ranks = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+    final String[] suits = {"♠", "♥", "♦", "♣"};
+
+    public Deck()
+    {
         cards = new ArrayList<Card>();
     }
-    public void fillDeck() {
-        for (int i = 1; i <= 52; i++) {
-            Card card = new Card("Card " + i, i);
-            cards.add(card);
+    public void fillDeck()
+    {
+        for (String s : suits)
+        {
+            for (String r : ranks)
+            {
+                this.cards.add(new Card(r, s));
+            }
         }
     }
 
