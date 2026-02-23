@@ -81,7 +81,7 @@ public class Controller {
         }
 
         System.out.println("T-1000 points: " + machineHand.sumScore());
-        
+
         int playerScore = playerHand.sumScore();
         int finalMachineScore = machineHand.sumScore();
 

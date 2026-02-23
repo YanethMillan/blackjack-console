@@ -1,0 +1,10 @@
+# IntelliJ / IDEs
+.idea/
+*.iml
+
+# Compilados de Java
+out/
+*.class
+
+# Otros posibles
+.DS_Store
