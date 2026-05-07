@@ -14,6 +14,7 @@ public class Hand {
 
     public int sumScore() {
         int sum = 0;
+        int aceCount = 0;
 
         for (int i = 0; i < cards.size(); i++) {
             Card card = cards.get(i);
@@ -30,6 +31,7 @@ public class Hand {
             }
             else if (rank.equals("A")) {
                 sum = sum + 11;
+                aceCount = aceCount + 1;
             }
             else if (rank.equals("2")) {
                 sum = sum + 2;
@@ -58,6 +60,10 @@ public class Hand {
             else if (rank.equals("10")) {
                 sum = sum + 10;
             }
+        }
+        while (sum > 21 && aceCount > 0) {
+            sum = sum - 10;
+            aceCount = aceCount - 1;
         }
         return sum;
     }
